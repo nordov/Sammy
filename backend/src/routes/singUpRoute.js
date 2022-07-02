@@ -13,6 +13,7 @@ export const signUpRoute = {
 
         if ( user ) {
             res.status(409).json({ "Error: ": "User already exists" });
+            return;
         }
 
         const passwordHash = await bcrypt.hash( password, 10 );
@@ -41,8 +42,9 @@ export const signUpRoute = {
             process.env.JWT_SECRET,
             { expiresIn: '2d' },
             ( err, token ) => {
-                if ( err ) return res.status( 500 ).json({ "Error occurred during Sign Up: ": err });
+                if ( err ) return res.status( 500 ).json({ "Error occurred during Sign Up: ": err.message });
                 res.status( 200 ).json({ token });
+                return;
             }
 
         );
