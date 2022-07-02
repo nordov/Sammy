@@ -2,15 +2,16 @@ import db from '../config/keys';
 import { MongoClient } from 'mongodb';
 
 const mongodb = db.mongoURI;
+let client;
 
 export const initializeDbConnection = async () => {
-    const client = await MongoClient.connect(mongodb, {
+    client = await MongoClient.connect(mongodb, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });
 };
 
-export const getDbConnection = dbName => {
+export const getDbConnection = () => {
     const db = client.db('sammy');
     return db;
 };
