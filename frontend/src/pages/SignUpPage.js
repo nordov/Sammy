@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
+import { useToken } from "../auth/useToken";
 
 export const SignUpPage = () => {
+
+    const [ token, setToken ] = useToken();
 
     const [ emailValue, setEmailValue ] = useState('');
     const [ passwordValue, setPasswordValue ] = useState('');
@@ -10,7 +14,13 @@ export const SignUpPage = () => {
     const history = useHistory();
 
     const onSignUpClicked = async () => {
-        alert("Sign Up was clicked");
+        const response =  await axios.post('/api/sign-up',  {
+            email: emailValue,
+            password: passwordValue,
+        });
+        const { token } = response.data;
+        setToken(token);
+        history.push('/');
     }
 
     return (

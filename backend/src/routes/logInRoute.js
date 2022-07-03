@@ -19,9 +19,6 @@ export const logInRoute = {
 
         const pwdIsCorrect = await bcrypt.compare( password, passwordHash );
 
-        // TODO remove
-        console.log(user);
-
         if ( pwdIsCorrect ) {
 
             jwt.sign({
