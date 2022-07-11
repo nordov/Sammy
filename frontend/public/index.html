@@ -1,20 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Full-Stack React User Authentication App"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>User Authentication</title>
+
+    <title>Sammy</title>
+
+    <link href="%PUBLIC_URL%/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="%PUBLIC_URL%/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="%PUBLIC_URL%/vendor/nouislider/nouislider.min.css">
+
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/style.css">
+  
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
     <div id="root"></div>
+
+    <!-- Required vendors -->
+    <script src="%PUBLIC_URL%/vendor/global/global.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="%PUBLIC_URL%/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    
+    <!-- Apex Chart -->
+    <!-- <script src="./vendor/apexchart/apexchart.js"></script> -->
+  
+    
+    <!-- Chart piety plugin files -->
+    <script src="%PUBLIC_URL%/vendor/peity/jquery.peity.min.js"></script>
+    <!-- Dashboard 1 -->
+    <script src="%PUBLIC_URL%/assets/js/dashboard/dashboard-1.js"></script>
+    
+    <script src="%PUBLIC_URL%/vendor/owl-carousel/owl.carousel.js"></script>
+    
+    <script src="%PUBLIC_URL%/assets/js/custom.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/dlabnav-init.js"></script>
+
+    <script src="./vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js"></script>
+
+    <script>
+      function cardsCenter() {
+
+        /*  testimonial one function by = owl.carousel.js */
+
+
+
+        jQuery('.card-slider').owlCarousel({
+          loop: true,
+          margin: 0,
+          nav: true,
+          //center:true,
+          slideSpeed: 3000,
+          paginationSpeed: 3000,
+          dots: true,
+          navText: ['<i class="fas fa-arrow-left"></i>', '<i class="fas fa-arrow-right"></i>'],
+          responsive: {
+            0: {
+              items: 1
+            },
+            576: {
+              items: 1
+            },
+            800: {
+              items: 1
+            },
+            991: {
+              items: 1
+            },
+            1200: {
+              items: 1
+            },
+            1600: {
+              items: 1
+            }
+          }
+        })
+      }
+
+      jQuery(window).on('load', function () {
+        setTimeout(function () {
+          cardsCenter();
+        }, 1000);
+      });
+
+    </script>
+      
   </body>
 </html>
