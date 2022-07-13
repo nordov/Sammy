@@ -74,6 +74,24 @@ const PersonalInfoTab = () => {
                         </label>
                     </div>
                 </div>
+                <div class="col-lg-6 mb-2">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control form-control-lg" id="floatingInput" placeholder="Nombre" />
+                        <label for="floatingInput">
+                            Pseudonimo
+                            <span class="text-danger">*</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-2">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control form-control-lg" id="floatingInput" placeholder="Apellidos" />
+                        <label for="floatingInput">
+                            Ambos Apellidos
+                            <span class="text-danger">*</span>
+                        </label>
+                    </div>
+                </div>
                 <div class="col-lg-12 mb-2">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control form-control-lg" id="floatingInput" placeholder="Apellidos" />
